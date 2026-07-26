@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Technical Claims"
+  short_description: "Check technical claims with sources and logic"
+  default_prompt: "Use $verify-technical-claims to cek kebenaran konsep ini."
