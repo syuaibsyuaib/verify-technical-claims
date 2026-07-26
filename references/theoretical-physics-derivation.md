@@ -25,9 +25,9 @@ Modul ini tidak boleh mengklaim:
 
 Gunakan rujukan primer/otoritatif ketika menilai klaim fisika:
 
-- Einstein 1905, mass-energy equivalence: `https://www.fourmilab.ch/etexts/einstein/E_mc2/e_mc2.pdf`
+- Einstein 1905, mass-energy equivalence (terjemahan resmi, The Einstein Papers Project, Princeton University Press): `https://einsteinpapers.press.princeton.edu/vol2-trans/186`
 - Stanford Encyclopedia of Philosophy, mass-energy equivalence: `https://plato.stanford.edu/entries/equivME/`
-- NIST SI units: `https://www.nist.gov/pml/weights-and-measures/metric-si/si-units`
+- NIST SI units: `https://www.nist.gov/pml/owm/metric-si/si-units`
 - Stanford Encyclopedia of Philosophy, symmetry and symmetry breaking: `https://plato.stanford.edu/entries/symmetry-breaking/`
 
 Jika domainnya relativitas, kuantum, termodinamika, elektromagnetisme, fluida, atau kosmologi, cari juga paper, textbook, standar, atau review primer yang khusus untuk domain itu sebelum membuat keputusan.

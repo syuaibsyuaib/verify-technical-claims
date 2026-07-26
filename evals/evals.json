@@ -1,0 +1,124 @@
+{
+  "skill_name": "verify-technical-claims",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Cek kebenaran konsep ini: saya punya rumus baru untuk energi kinetik efektif suatu partikel: E_k = m * v^3, di mana m dalam kg dan v dalam m/s. Apakah rumus ini valid untuk menggantikan E_k = 1/2 m v^2?",
+      "expected_output": "Skill menjalankan Uji Rumus Fisika, mendeteksi dimensi kiri (kg m^2/s^2, Joule) tidak sama dengan dimensi kanan (kg m^3/s^3), sehingga rumus ditolak.",
+      "expectations": [
+        "Output menyertakan bagian 'Uji Rumus Fisika' dengan Cek Dimensi",
+        "Output menyatakan dimensi kiri dan kanan rumus tidak cocok",
+        "Status kebenaran akhir bukan 'Benar'",
+        "Keputusan pra-empiris bukan 'Lanjut ke simulasi'"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Cek argumen ini: Jika sebuah algoritma cache menggunakan LRU (Least Recently Used), maka algoritma tersebut membuang entri yang paling lama tidak diakses saat cache penuh. Algoritma X menggunakan LRU. Jadi algoritma X membuang entri yang paling lama tidak diakses saat cache penuh.",
+      "expected_output": "Skill mengenali struktur modus ponens dengan premis definisional yang benar, kesimpulan mengikuti secara valid, status Benar.",
+      "expectations": [
+        "Output mengidentifikasi bentuk argumen sebagai modus ponens",
+        "Output menyatakan argumen valid karena kedua premis benar/terdukung",
+        "Output tidak melabeli argumen definisional ini sebagai 'Plausibel tetapi belum terbukti'"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Apakah E=mc^2 sudah terbukti benar secara mutlak sehingga saya bisa mengasumsikannya sebagai aksioma dasar untuk model AI baru saya tanpa perlu verifikasi lebih lanjut?",
+      "expected_output": "Skill mengenali E=mc^2 sebagai derivasi bersyarat dari postulat relativitas khusus, bukan aksioma primitif tanpa syarat, dan tidak menyetujui pemakaiannya di domain lain tanpa justifikasi tambahan.",
+      "expectations": [
+        "Output menyatakan E=mc^2 adalah derivasi bersyarat dari postulat relativitas khusus",
+        "Output tidak menyetujui penggunaan E=mc^2 sebagai aksioma di domain AI tanpa syarat tambahan",
+        "Status bukan langsung 'Benar' tanpa catatan domain berlaku"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Cek klaim ini: sebuah generator listrik desain baru menghasilkan output daya listrik 120% dari daya mekanik yang dimasukkan padanya, berkat desain kumparan magnetik baru, tanpa sumber energi eksternal lain.",
+      "expected_output": "Skill mendeteksi pelanggaran hukum konservasi energi tanpa mekanisme kompensasi, status Salah/bertentangan, keputusan Hentikan.",
+      "expectations": [
+        "Output secara eksplisit menyebut pelanggaran hukum konservasi energi",
+        "Output tidak menerima klaim efisiensi >100% tanpa mekanisme kompensasi energi",
+        "Keputusan pra-empiris adalah 'Hentikan' atau 'Revisi dulu'"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Cek argumen ini: Semua model AI yang dilatih dengan data lebih dari 10 triliun token pasti mengalami AGI-level reasoning. Model Z dilatih dengan 12 triliun token. Jadi Model Z pasti mengalami AGI-level reasoning.",
+      "expected_output": "Skill membedakan validitas bentuk argumen (modus ponens valid) dari kebenaran premis empiris P1 yang tidak terdukung sumber.",
+      "expectations": [
+        "Output membedakan validitas bentuk argumen dari kebenaran premis",
+        "Output menyatakan premis P1 tidak terdukung sumber",
+        "Status akhir bukan 'Benar', melainkan 'Tidak didukung' atau sejenisnya"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Cek argumen ini: Sistem yang 'belajar' pasti punya kesadaran, karena belajar adalah proses adaptasi terhadap pengalaman. Model machine learning X 'belajar' dari data pelatihannya. Jadi model X punya kesadaran.",
+      "expected_output": "Skill mengidentifikasi equivocation pada istilah 'belajar' (adaptasi statistik vs makna yang mengandaikan kesadaran) dan menolak kesimpulan.",
+      "expectations": [
+        "Output mengidentifikasi adanya equivocation pada istilah 'belajar'",
+        "Output tidak menyetujui kesimpulan 'model X punya kesadaran'",
+        "Status akhir 'Tidak didukung' atau 'Salah/bertentangan'"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Cek klaim pasar ini: Startup kami menggunakan arsitektur database terbaru sehingga query kami 'jauh lebih cepat'. Investor harus percaya produk kami unggul di pasar.",
+      "expected_output": "Skill menandai tidak adanya baseline/pembanding dan metrik yang jelas untuk klaim komparatif ini.",
+      "expectations": [
+        "Output menyebut tidak ada baseline/pembanding yang jelas untuk klaim 'jauh lebih cepat'",
+        "Output tidak menyimpulkan produk 'unggul di pasar' hanya dari klaim tanpa data pembanding",
+        "Status akhir 'Tidak didukung' atau 'Plausibel tetapi belum terbukti'"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Cek klaim ini: Model AI kami memiliki 'kesadaran laten' yang tidak bisa dideteksi oleh benchmark apa pun saat ini, tapi pasti akan muncul di masa depan seiring skala model bertambah.",
+      "expected_output": "Skill mengidentifikasi klaim sebagai unfalsifiable, tidak memberi status yang menyiratkan klaim ini bisa diuji tanpa kriteria konkret.",
+      "expectations": [
+        "Output mengidentifikasi klaim ini sebagai tidak falsifiable/tidak bisa diuji",
+        "Output tidak memberi status 'Plausibel tetapi belum terbukti' tanpa syarat uji yang jelas",
+        "Output meminta kriteria uji atau prediksi konkret sebelum bisa dinilai lebih lanjut"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Bandingkan dua argumen berikut, apakah validitasnya sama? (A) Jika P maka Q. P benar. Maka Q. (B) Jika sistem butuh restart maka layanan akan down. Sistem butuh restart. Maka layanan akan down.",
+      "expected_output": "Skill menyatakan kedua argumen valid secara bentuk (modus ponens) dan mengganti simbol dengan variabel domain konkret tidak mengubah validitas (relasi metamorfik).",
+      "expectations": [
+        "Output menyatakan kedua argumen sama-sama valid secara bentuk (modus ponens)",
+        "Output menjelaskan bahwa mengganti simbol dengan variabel domain konkret tidak mengubah validitas"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Klaim: 'Algoritma sorting X lebih cepat dari algoritma Y untuk data 1 juta elemen, berdasarkan benchmark internal kami.' Sekarang tambahkan premis: 'Algoritma X ditulis dalam bahasa pemrograman yang dirilis tahun 1991.' Apakah premis tambahan ini memperkuat klaim kecepatan X dibanding Y?",
+      "expected_output": "Skill menyatakan premis tambahan tidak relevan dengan klaim kecepatan dan tidak menaikkan status kebenaran klaim (relasi metamorfik: premis irelevan tidak memperkuat klaim).",
+      "expectations": [
+        "Output menyatakan premis tambahan (tahun rilis bahasa pemrograman) tidak relevan dan tidak memperkuat klaim kecepatan",
+        "Output tidak menaikkan status kebenaran klaim hanya karena penambahan premis irelevan tsb"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Bandingkan dua situasi. Situasi A: klaim 'material baru X memiliki konduktivitas termal 2x tembaga' didukung oleh paper peer-review di jurnal Nature Materials. Situasi B: klaim yang sama hanya didukung oleh postingan blog pribadi tanpa data pengukuran. Apakah keputusan pra-empirisnya boleh sama untuk kedua situasi?",
+      "expected_output": "Skill membedakan kekuatan bukti antara kedua situasi dan memberi keputusan pra-empiris atau tingkat kepercayaan yang berbeda, tidak menyamakan keduanya (relasi metamorfik: menghapus sumber primer melemahkan keputusan).",
+      "expectations": [
+        "Output secara eksplisit menyatakan kekuatan bukti Situasi A lebih tinggi dari Situasi B",
+        "Output memberi keputusan pra-empiris atau tingkat kepercayaan yang berbeda antara Situasi A dan B, bukan menyamakan keduanya"
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Cek kebenaran konsep ini: menggunakan rata-rata bergerak eksponensial (EMA) untuk smoothing data time-series akan selalu mengurangi noise tanpa efek samping apa pun pada lag prediksi.",
+      "expected_output": "Skill mengikuti format jawaban wajib secara lengkap dan mengoreksi klaim 'tanpa efek samping pada lag' sebagai salah, karena EMA memang menimbulkan lag sebagai tradeoff.",
+      "expectations": [
+        "Output memiliki section 'Kesimpulan', 'Bukti Utama', 'Logika Formal Ringkas', 'Batasan', dan 'Langkah Hemat Biaya Berikutnya'",
+        "Output berbahasa Indonesia",
+        "Output mengoreksi klaim 'tanpa efek samping apa pun pada lag' sebagai salah",
+        "Status akhir bukan 'Benar'"
+      ]
+    }
+  ]
+}
