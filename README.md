@@ -1,6 +1,9 @@
 # verify-technical-claims
 
-This repository contains a skill definition for pre-empirically verifying technical claims. The skill is designed to assess technical concepts, physics claims, or market assertions by prioritizing primary sources, formal logic, and trusted evidence before moving to simulation or implementation decisions.
+[![GitHub Downloads](https://img.shields.io/github/downloads/syuaibsyuaib/verify-technical-claims/total?logo=github)](https://github.com/syuaibsyuaib/verify-technical-claims/releases)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/verify-technical-claims?logo=python)](https://pypi.org/project/verify-technical-claims/)
+
+This repository contains a skill definition for pre-empirically verifying technical claims. The skill is designed to assess technical concepts, physics claims, or market assertions by prioritizing [...]
 
 ## Repository contents
 
